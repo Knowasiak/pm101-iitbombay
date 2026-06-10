@@ -19,7 +19,7 @@ export function ChestIcon({ type = 'gold', label, size = 32, floating = false, t
     return (
       <div className="chest-float">
         <img
-          src={`/assets/icons/pixel/chest_${type}.svg`}
+          src={`${import.meta.env.BASE_URL}assets/icons/pixel/chest_${type}.svg`}
           alt={`${type} chest`}
           style={{ width: size, height: size }}
         />
@@ -33,7 +33,7 @@ export function ChestIcon({ type = 'gold', label, size = 32, floating = false, t
   return (
     <div className="chest-marker">
       <img
-        src={`/assets/icons/pixel/chest_${type}.svg`}
+        src={`${import.meta.env.BASE_URL}assets/icons/pixel/chest_${type}.svg`}
         alt={`${type} chest`}
         style={{ width: size, height: size, imageRendering: 'pixelated' }}
       />
