@@ -13,7 +13,7 @@ export function LogoGrid({ items, cols = 6 }: LogoGridProps) {
       {items.map((item) => {
         const exts = item.ext ? [item.ext] : ['svg', 'png', 'ico'];
         // Try in order
-        const src = `/assets/logos/${item.name}.${exts[0]}`;
+        const src = `${import.meta.env.BASE_URL}assets/logos/${item.name}.${exts[0]}`;
         return (
           <div key={item.name} className="logo-cell">
             <img
@@ -24,7 +24,7 @@ export function LogoGrid({ items, cols = 6 }: LogoGridProps) {
                 const tried = img.dataset.tried ? parseInt(img.dataset.tried) : 0;
                 if (tried < exts.length - 1) {
                   img.dataset.tried = String(tried + 1);
-                  img.src = `/assets/logos/${item.name}.${exts[tried + 1]}`;
+                  img.src = `${import.meta.env.BASE_URL}assets/logos/${item.name}.${exts[tried + 1]}`;
                 } else {
                   img.style.display = 'none';
                 }
@@ -43,7 +43,7 @@ export function Logo({ name, size = 32, ext }: { name: string; size?: number; ex
   const exts = ext ? [ext] : ['svg', 'png', 'ico'];
   return (
     <img
-      src={`/assets/logos/${name}.${exts[0]}`}
+      src={`${import.meta.env.BASE_URL}assets/logos/${name}.${exts[0]}`}
       alt={name}
       style={{ width: size, height: size, objectFit: 'contain' }}
       onError={(e) => {
@@ -51,7 +51,7 @@ export function Logo({ name, size = 32, ext }: { name: string; size?: number; ex
         const tried = img.dataset.tried ? parseInt(img.dataset.tried) : 0;
         if (tried < exts.length - 1) {
           img.dataset.tried = String(tried + 1);
-          img.src = `/assets/logos/${name}.${exts[tried + 1]}`;
+          img.src = `${import.meta.env.BASE_URL}assets/logos/${name}.${exts[tried + 1]}`;
         }
       }}
     />

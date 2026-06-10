@@ -42,7 +42,7 @@ export function Bullets({ items, color = 'var(--text-primary)' }: { items: strin
       {items.map((item, i) => (
         <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10,
           fontSize: 'var(--font-base)', fontFamily: 'ShareTechMono, monospace', color, lineHeight: 1.5 }}>
-          <img src="/assets/icons/pixel/pixel_arrow.svg" alt="" width={18} height={18}
+          <img src={`${import.meta.env.BASE_URL}assets/icons/pixel/pixel_arrow.svg`} alt="" width={18} height={18}
             style={{ imageRendering: 'pixelated', flexShrink: 0, marginTop: 2,
               filter: 'drop-shadow(0 0 3px rgba(0,255,65,0.6))' }} />
           <span>{item}</span>
@@ -133,7 +133,7 @@ export function ErrorDialog({ message, detail }: { message: string; detail?: str
   return (
     <Dialog90s title="SYSTEM_FAILURE.exe">
       <div style={{ display: 'flex', gap: 14, alignItems: 'flex-start', marginBottom: 14 }}>
-        <img src="/assets/icons/pixel/shield.svg" alt="error" width={40} height={40}
+        <img src={`${import.meta.env.BASE_URL}assets/icons/pixel/shield.svg`} alt="error" width={40} height={40}
           style={{ imageRendering: 'pixelated', filter: 'hue-rotate(300deg) saturate(2) brightness(1.5)' }} />
         <div>
           <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-md)',

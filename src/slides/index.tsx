@@ -25,7 +25,7 @@ const Slide01: SlideFC = ({ meta }) => (
         {/* Main title */}
         <Window90s
           title="PM101.exe — Product Management 101"
-          icon="/assets/icons/pixel/laptop.svg"
+          icon={`${import.meta.env.BASE_URL}assets/icons/pixel/laptop.svg`}
           menuItems={['File', 'View', 'Help']}
           statusLeft="ShARE Career Cell · IIT Bombay"
           statusRight="June 2026"
@@ -62,7 +62,7 @@ const Slide01: SlideFC = ({ meta }) => (
         {/* The honest why */}
         <Window90s
           title="WHY_THIS.exe — The Honest Reason You're Here"
-          icon="/assets/icons/pixel/block_green.svg"
+          icon={`${import.meta.env.BASE_URL}assets/icons/pixel/block_green.svg`}
           statusLeft="read this first" statusRight="important"
           style={{ flex: 1 }}
         >
@@ -70,7 +70,7 @@ const Slide01: SlideFC = ({ meta }) => (
 
             {/* The core insight */}
             <div style={{ padding: '10px 14px', background: '#1A0000', border: '2px solid rgba(217,83,79,0.5)', display: 'flex', gap: 10, alignItems: 'flex-start' }}>
-              <img src="/assets/icons/pixel/block_green.svg" style={{ width: 20, height: 20, marginTop: 2, flexShrink: 0 }} alt="" />
+              <img src={`${import.meta.env.BASE_URL}assets/icons/pixel/block_green.svg`} style={{ width: 20, height: 20, marginTop: 2, flexShrink: 0 }} alt="" />
               <div>
                 <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-xs)', color: 'var(--btn-red)', marginBottom: 3 }}>THE BRUTAL TRUTH</div>
                 <div style={{ fontFamily: 'ShareTechMono', fontSize: 'var(--font-xs)', color: 'var(--text-primary)', lineHeight: 1.65 }}>
@@ -123,7 +123,7 @@ const Slide01: SlideFC = ({ meta }) => (
       <div style={{ display: 'flex', gap: 12, alignItems: 'stretch' }}>
 
         {/* What you'll walk away with */}
-        <Window90s title="LEARNING_GOALS.exe — What You Take Home" icon="/assets/icons/pixel/star_pixel.svg"
+        <Window90s title="LEARNING_GOALS.exe — What You Take Home" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`}
           statusLeft="5 mental models" statusRight="0 fluff"
           style={{ flex: 2 }}>
           <div style={{ padding: '10px 14px', display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 6 }}>
@@ -144,7 +144,7 @@ const Slide01: SlideFC = ({ meta }) => (
         </Window90s>
 
         {/* Where this skill takes you */}
-        <Window90s title="CAREER_PATHS.exe — Where This Leads" icon="/assets/icons/pixel/rocket.svg"
+        <Window90s title="CAREER_PATHS.exe — Where This Leads" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/rocket.svg`}
           statusLeft="post-IIT tracks" statusRight="all need product thinking"
           style={{ flex: 1 }}>
           <div style={{ padding: '10px 14px', display: 'flex', flexDirection: 'column', gap: 5 }}>
@@ -175,13 +175,13 @@ const Slide01: SlideFC = ({ meta }) => (
 const Slide02: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <div className="desktop-scene" style={{ width: '100%', maxWidth: 1300, justifyContent: 'center' }}>
-      <Window90s title="SYSTEM_INFO.exe — Presenter Profile" icon="/assets/icons/pixel/star_pixel.svg"
+      <Window90s title="SYSTEM_INFO.exe — Presenter Profile" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`}
         menuItems={['File', 'Edit', 'View']} statusLeft="Aditya Gaurav" statusRight="SF Bay Area, US"
         style={{ flex: 1, maxWidth: 660 }}>
         <div style={{ display: 'flex', gap: 16, padding: 8 }}>
           <div style={{ flexShrink: 0 }}>
             <div style={{ width: 90, height: 90, border: '3px solid var(--matrix-dim)', overflow: 'hidden' }}>
-              <img src="/assets/images/aditya_avatar.png" alt="Aditya Gaurav" className="photo" style={{ width: '100%', height: '100%', objectFit: 'cover', imageRendering: 'auto' }} />
+              <img src={`${import.meta.env.BASE_URL}assets/images/aditya_avatar.png`} alt="Aditya Gaurav" className="photo" style={{ width: '100%', height: '100%', objectFit: 'cover', imageRendering: 'auto' }} />
             </div>
           </div>
           <div>
@@ -207,7 +207,7 @@ const Slide02: SlideFC = ({ meta }) => (
       </Window90s>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        <Dialog90s title="LINKS.exe" icon="/assets/icons/pixel/pixel_arrow.svg">
+        <Dialog90s title="LINKS.exe" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/pixel_arrow.svg`}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             {[
               { qr: 'linkedin', label: 'LinkedIn' },
@@ -216,7 +216,7 @@ const Slide02: SlideFC = ({ meta }) => (
             ].map(l => <QRPanel key={l.qr} name={l.qr} label={l.label} size={64} />)}
           </div>
         </Dialog90s>
-        <img src="/assets/images/iitb_real.png" alt="IIT Bombay" style={{ height: 48, objectFit: 'contain', imageRendering: 'auto', filter: 'none' }} />
+        <img src={`${import.meta.env.BASE_URL}assets/images/iitb_real.png`} alt="IIT Bombay" style={{ height: 48, objectFit: 'contain', imageRendering: 'auto', filter: 'none' }} />
       </div>
     </div>
   </SlideWrapper>
@@ -229,7 +229,7 @@ const Slide02: SlideFC = ({ meta }) => (
 const Slide03: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="STAT_REPORT.exe — Why Products Actually Die"
-      icon="/assets/icons/pixel/block_green.svg"
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/block_green.svg`}
       statusLeft="CB Insights · 2024 · N=1,000+ startups" statusRight="POST-MORTEM DATA"
       style={{ maxWidth: 1100, width: '100%' }}>
       <div style={{ padding: 14 }}>
@@ -289,7 +289,7 @@ const Slide03: SlideFC = ({ meta }) => (
 const Slide04: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="JOB_DESC.exe — What Does a PM Actually Do?"
-      icon="/assets/icons/pixel/star_pixel.svg"
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`}
       statusLeft="Not a project manager." statusRight="Not an engineer."
       style={{ width: '100%', maxWidth: 1100 }}>
       <div style={{ padding: 14, display: 'flex', gap: 14 }}>
@@ -360,7 +360,7 @@ const Slide05: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <div style={{ position: 'relative', width: '100%', maxWidth: 900 }}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 20, alignItems: 'center', width: '100%' }}>
-        <Dialog90s title="ALERT.exe — The One Rule" icon="/assets/icons/pixel/shield.svg" style={{ width: '100%' }}>
+        <Dialog90s title="ALERT.exe — The One Rule" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/shield.svg`} style={{ width: '100%' }}>
         <div style={{ textAlign: 'center', padding: '1rem' }}>
           <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'clamp(1.4rem, 3.5vw, 2.8rem)', color: 'var(--matrix-mid)', lineHeight: 1.4, marginBottom: 12 }}>
             Talk. To. People. First.
@@ -387,7 +387,7 @@ const Slide05: SlideFC = ({ meta }) => (
 
 const Slide06: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
-    <Window90s title="SEARCH.exe — Problem First" icon="/assets/icons/pixel/rocket.svg"
+    <Window90s title="SEARCH.exe — Problem First" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/rocket.svg`}
       menuItems={['File', 'Object']} statusLeft="Fall in love with the problem." statusRight=""
       style={{ maxWidth: 1000, width: '100%' }}>
       <div style={{ padding: 14, display: 'flex', gap: 20 }}>
@@ -413,7 +413,7 @@ const Slide06: SlideFC = ({ meta }) => (
 
 const Slide07: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
-    <Window90s title="MESSENGER.exe — User Research" icon="/assets/icons/pixel/laptop.svg"
+    <Window90s title="MESSENGER.exe — User Research" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/laptop.svg`}
       menuItems={['File', 'Edit', 'Object', 'Type']}
       statusLeft="16 Online" statusRight="3 New Messages"
       style={{ maxWidth: 980, width: '100%' }}>
@@ -446,7 +446,7 @@ const Slide07: SlideFC = ({ meta }) => (
 const Slide08: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="DOCUMENT_1.txt — Product Requirements Doc"
-      icon="/assets/icons/pixel/laptop.svg" menuItems={['File', 'Edit', 'Object', 'Type', 'Paragraph']}
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/laptop.svg`} menuItems={['File', 'Edit', 'Object', 'Type', 'Paragraph']}
       statusLeft="PRD · Keep it 1 page." statusRight="v1.0"
       style={{ maxWidth: 1000, width: '100%' }}>
       <div style={{ padding: '10px 14px', display: 'flex', gap: 20 }}>
@@ -488,7 +488,7 @@ const Slide08: SlideFC = ({ meta }) => (
 const Slide09: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="CONTROL_PANEL.exe — Validate Before Building"
-      icon="/assets/icons/pixel/database.svg" menuItems={['General', 'Options']}
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/database.svg`} menuItems={['General', 'Options']}
       statusLeft="Demand check" statusRight=""
       style={{ maxWidth: 980, width: '100%' }}>
       <div style={{ padding: 14 }}>
@@ -526,7 +526,7 @@ const Slide09: SlideFC = ({ meta }) => (
 const Slide10: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="OPEN_FILE.exe — Validation Toolkit"
-      icon="/assets/icons/pixel/laptop.svg" menuItems={['File', 'Edit', 'View']}
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/laptop.svg`} menuItems={['File', 'Edit', 'View']}
       statusLeft="All free to start" statusRight=""
       style={{ maxWidth: 1000, width: '100%' }}>
       <div style={{ padding: 14 }}>
@@ -557,7 +557,7 @@ const Slide11: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <div style={{ position: 'relative', width: '100%' }}>
     <Window90s title="FLOW_CHART.exe — User Journey"
-      icon="/assets/icons/pixel/database.svg" style={{ maxWidth: 1050, width: '100%' }}
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/database.svg`} style={{ maxWidth: 1050, width: '100%' }}
       statusLeft="Where do users drop off?" statusRight="">
       <div style={{ padding: 14 }}>
         <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-xs)', color: 'var(--matrix-mid)', marginBottom: 14 }}>USER JOURNEY MAP</div>
@@ -601,7 +601,7 @@ const Slide11: SlideFC = ({ meta }) => (
 const Slide12: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <div style={{ display: 'flex', gap: '2vw', width: '100%', maxWidth: 1000, alignItems: 'flex-start', justifyContent: 'center' }}>
-      <Window90s title="SYSTEM_ERROR.exe — Architecture Warning" icon="/assets/icons/pixel/shield.svg" style={{ flex: 1 }}
+      <Window90s title="SYSTEM_ERROR.exe — Architecture Warning" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/shield.svg`} style={{ flex: 1 }}
         accentColor="var(--matrix-mid)">
         <div style={{ padding: 14 }}>
           <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'clamp(1rem, 2.5vw, 1.6rem)', color: 'var(--matrix-mid)', lineHeight: 1.5, marginBottom: 12 }}>
@@ -617,7 +617,7 @@ const Slide12: SlideFC = ({ meta }) => (
         </div>
       </Window90s>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        <Dialog90s title="BEFORE.exe" icon="/assets/icons/pixel/star_pixel.svg">
+        <Dialog90s title="BEFORE.exe" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`}>
           <div style={{ padding: 8 }}>
             <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-xs)', color: 'var(--btn-red)', marginBottom: 6 }}>[X] OVER-ENGINEERED (DAY 1)</div>
             <div style={{ fontFamily: 'ShareTechMono', fontSize: 'var(--font-xs)', color: 'var(--text-primary)', lineHeight: 1.6 }}>
@@ -625,7 +625,7 @@ const Slide12: SlideFC = ({ meta }) => (
             </div>
           </div>
         </Dialog90s>
-        <Dialog90s title="AFTER.exe" icon="/assets/icons/pixel/star_pixel.svg">
+        <Dialog90s title="AFTER.exe" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`}>
           <div style={{ padding: 8 }}>
             <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-xs)', color: 'var(--matrix-dark)', marginBottom: 6 }}>[OK] LEAN (DAY 1)</div>
             <div style={{ fontFamily: 'ShareTechMono', fontSize: 'var(--font-xs)', color: 'var(--text-primary)', lineHeight: 1.6 }}>
@@ -641,7 +641,7 @@ const Slide12: SlideFC = ({ meta }) => (
 const Slide13: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="CONTROL_PANEL.exe — The Stack Spectrum"
-      icon="/assets/icons/pixel/laptop.svg" style={{ maxWidth: 960, width: '100%' }}
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/laptop.svg`} style={{ maxWidth: 960, width: '100%' }}
       statusLeft="Start left. Move right when forced by scale." statusRight="">
       <div style={{ padding: 14 }}>
         <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-xs)', color: 'var(--matrix-mid)', marginBottom: 10, letterSpacing: 2 }}>
@@ -687,7 +687,7 @@ const Slide13: SlideFC = ({ meta }) => (
 const Slide14: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="SEARCH.exe — Competitive Analysis in 20 Minutes"
-      icon="/assets/icons/pixel/database.svg"
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/database.svg`}
       statusLeft="Before you build a single feature." statusRight="20 MIN EXERCISE"
       style={{ maxWidth: 1050, width: '100%' }}>
       <div style={{ padding: 14, display: 'flex', gap: 14 }}>
@@ -746,7 +746,7 @@ const Slide14: SlideFC = ({ meta }) => (
 const Slide15: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <div style={{ display: 'flex', flexDirection: 'column', gap: 14, width: '100%', maxWidth: 1050, alignItems: 'center' }}>
-      <Window90s title="ROCKET.exe — Rapid Prototyping" icon="/assets/icons/pixel/rocket.svg"
+      <Window90s title="ROCKET.exe — Rapid Prototyping" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/rocket.svg`}
         statusLeft="Zero to working UI in 10 minutes." statusRight=""
         style={{ width: '100%' }}>
         <div style={{ padding: 12 }}>
@@ -778,7 +778,7 @@ const Slide15: SlideFC = ({ meta }) => (
 const Slide16: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="STORAGE.exe — Database Strategy"
-      icon="/assets/icons/pixel/laptop.svg" menuItems={['File', 'Edit', 'View']}
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/laptop.svg`} menuItems={['File', 'Edit', 'View']}
       statusLeft="Start simple. Migrate when needed." statusRight=""
       style={{ maxWidth: 1000, width: '100%' }}>
       <div style={{ padding: 14 }}>
@@ -809,7 +809,7 @@ const Slide16: SlideFC = ({ meta }) => (
 
 const Slide17: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
-    <Window90s title="CLOUD.exe — Free Hosting" icon="/assets/icons/pixel/star_pixel.svg"
+    <Window90s title="CLOUD.exe — Free Hosting" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`}
       statusLeft="$0 to start, all of them." statusRight=""
       style={{ maxWidth: 1000, width: '100%' }}>
       <div style={{ padding: 14 }}>
@@ -842,7 +842,7 @@ const Slide17: SlideFC = ({ meta }) => (
 const Slide18: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="CONNECT.exe — API Integration 101"
-      icon="/assets/icons/pixel/laptop.svg" style={{ maxWidth: 1050, width: '100%' }}
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/laptop.svg`} style={{ maxWidth: 1050, width: '100%' }}
       statusLeft="How to call any external service" statusRight="">
       <div style={{ padding: 14 }}>
         <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-xs)', color: 'var(--matrix-mid)', marginBottom: 12 }}>
@@ -888,7 +888,7 @@ const Slide18: SlideFC = ({ meta }) => (
 const Slide19: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="CALENDAR.exe — 7-Day 0→1 Sprint"
-      icon="/assets/icons/pixel/star_pixel.svg" style={{ maxWidth: 1050, width: '100%' }}
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`} style={{ maxWidth: 1050, width: '100%' }}
       statusLeft="From idea to live product." statusRight="7 days">
       <div style={{ padding: 14 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 6 }}>
@@ -925,7 +925,7 @@ const Slide20: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <div style={{ position: 'relative', width: '100%', maxWidth: 980 }}>
     <Window90s title="CONTROL_PANEL.exe — Git Basics"
-      icon="/assets/icons/pixel/star_pixel.svg" style={{ maxWidth: 980, width: '100%' }}
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`} style={{ maxWidth: 980, width: '100%' }}
       statusLeft="Every change tracked. Nothing lost." statusRight="">
       <div style={{ padding: 14 }}>
         <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-xs)', color: 'var(--matrix-mid)', marginBottom: 14 }}>4 COMMANDS YOU MUST KNOW</div>
@@ -965,7 +965,7 @@ const Slide20: SlideFC = ({ meta }) => (
 const Slide21: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="PAINT.exe — One Design Language"
-      icon="/assets/icons/pixel/star_pixel.svg" style={{ maxWidth: 1000, width: '100%' }}
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`} style={{ maxWidth: 1000, width: '100%' }}
       statusLeft="Consistency beats creativity. Always.">
       <div style={{ padding: 14 }}>
         <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-xs)', color: 'var(--matrix-mid)', marginBottom: 14 }}>RULE OF 3</div>
@@ -1000,7 +1000,7 @@ const Slide21: SlideFC = ({ meta }) => (
 const Slide22: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="DOCUMENT.exe — UI Fundamentals"
-      icon="/assets/icons/pixel/star_pixel.svg" style={{ maxWidth: 1000, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`} style={{ maxWidth: 1000, width: '100%' }}>
       <div style={{ padding: 14 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
           {[
@@ -1027,7 +1027,7 @@ const Slide22: SlideFC = ({ meta }) => (
 const Slide23: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="TOOLBOX.exe — Free Design Tools"
-      icon="/assets/icons/pixel/star_pixel.svg" style={{ maxWidth: 1000, width: '100%' }}
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`} style={{ maxWidth: 1000, width: '100%' }}
       statusLeft="All free. No excuses." statusRight="">
       <div style={{ padding: 14 }}>
         <LogoGrid items={[
@@ -1060,7 +1060,7 @@ const Slide23: SlideFC = ({ meta }) => (
 const Slide24: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="PREVIEW.exe — Show Your Product Before It's Perfect"
-      icon="/assets/icons/pixel/star_pixel.svg"
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`}
       statusLeft="60s demo > 60-slide deck" statusRight="SHOW DON'T TELL"
       style={{ maxWidth: 1100, width: '100%' }}>
       <div style={{ padding: 14 }}>
@@ -1137,7 +1137,7 @@ const Slide24: SlideFC = ({ meta }) => (
 const Slide25: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="INDIA.exe — PM Landscape: What Actually Matters Here"
-      icon="/assets/icons/pixel/rocket.svg"
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/rocket.svg`}
       statusLeft="India-specific context" statusRight="READ BEFORE PLACEMENT SEASON"
       style={{ maxWidth: 1100, width: '100%' }}>
       <div style={{ padding: 14, display: 'flex', gap: 14 }}>
@@ -1198,7 +1198,7 @@ const Slide25: SlideFC = ({ meta }) => (
 const Slide26: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <div className="desktop-scene" style={{ width: '100%', maxWidth: 1050, justifyContent: 'center' }}>
-      <Window90s title="GEAR.exe — Automate First" icon="/assets/icons/pixel/database.svg" style={{ flex: 1 }}>
+      <Window90s title="GEAR.exe — Automate First" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/database.svg`} style={{ flex: 1 }}>
         <div style={{ padding: 14 }}>
           <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-base)', color: 'var(--matrix-mid)', marginBottom: 14, lineHeight: 1.5 }}>
             1 person + automation<br />= small team output
@@ -1212,7 +1212,7 @@ const Slide26: SlideFC = ({ meta }) => (
           ]} />
         </div>
       </Window90s>
-      <Dialog90s title="EXAMPLES.exe" icon="/assets/icons/pixel/block_green.svg" style={{ width: 280 }}>
+      <Dialog90s title="EXAMPLES.exe" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/block_green.svg`} style={{ width: 280 }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 6, padding: 8 }}>
           {[
             { task: 'Form → Notion DB', time: '30 min setup → ∞ saved' },
@@ -1234,7 +1234,7 @@ const Slide26: SlideFC = ({ meta }) => (
 const Slide27: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="FLOW.exe — n8n: Visual Automation"
-      icon="/assets/icons/pixel/star_pixel.svg" style={{ maxWidth: 1000, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`} style={{ maxWidth: 1000, width: '100%' }}>
       <div style={{ padding: 14, display: 'flex', gap: 16 }}>
         <div style={{ flex: 1 }}>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 12 }}>
@@ -1267,7 +1267,7 @@ const Slide27: SlideFC = ({ meta }) => (
 const Slide28: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="CURSOR.exe — AI-Assisted Development"
-      icon="/assets/icons/pixel/block_green.svg" style={{ maxWidth: 1000, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/block_green.svg`} style={{ maxWidth: 1000, width: '100%' }}>
       <div style={{ padding: 14 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10, marginBottom: 12 }}>
           {[
@@ -1300,7 +1300,7 @@ const Slide29: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <div className="desktop-scene" style={{ width: '100%', maxWidth: 1000, justifyContent: 'center' }}>
       <Window90s title="TERMINAL.exe — Ollama: Local AI"
-        icon="/assets/icons/pixel/star_pixel.svg" style={{ flex: 1 }}>
+        icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`} style={{ flex: 1 }}>
         <div style={{ padding: 14 }}>
           <div className="inset90" style={{ fontFamily: 'ShareTechMono', fontSize: 'var(--font-xs)', padding: '10px 14px', marginBottom: 12 }}>
             $ ollama run llama3<br />
@@ -1324,7 +1324,7 @@ const Slide29: SlideFC = ({ meta }) => (
         </div>
       </Window90s>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        <Window90s title="MODELS.exe" icon="/assets/icons/pixel/star_pixel.svg" style={{ width: 260 }}>
+        <Window90s title="MODELS.exe" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`} style={{ width: 260 }}>
           <div style={{ padding: 10 }}>
             {[
               { name: 'Llama 3.1 8B', use: 'General purpose' },
@@ -1348,7 +1348,7 @@ const Slide29: SlideFC = ({ meta }) => (
 const Slide30: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="NETWORK.exe — Cloud AI APIs"
-      icon="/assets/icons/pixel/laptop.svg" style={{ maxWidth: 1000, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/laptop.svg`} style={{ maxWidth: 1000, width: '100%' }}>
       <div style={{ padding: 14 }}>
         <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-xs)', color: 'var(--matrix-mid)', marginBottom: 12 }}>
           PICK THE CHEAPEST MODEL THAT SOLVES YOUR PROBLEM
@@ -1386,7 +1386,7 @@ const Slide31: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <div style={{ position: 'relative', width: '100%', maxWidth: 1000 }}>
     <Window90s title="VIDEO_GEN.exe — Local AI Video"
-      icon="/assets/icons/pixel/laptop.svg" style={{ maxWidth: 1000, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/laptop.svg`} style={{ maxWidth: 1000, width: '100%' }}>
       <div style={{ padding: 14 }}>
         <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-xs)', color: 'var(--matrix-mid)', marginBottom: 12 }}>
           RUN VIDEO AI ON YOUR OWN MACHINE
@@ -1424,7 +1424,7 @@ const Slide31: SlideFC = ({ meta }) => (
 const Slide32: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="MEGAPHONE.exe — How to Launch"
-      icon="/assets/icons/pixel/star_pixel.svg" style={{ maxWidth: 1050, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`} style={{ maxWidth: 1050, width: '100%' }}>
       <div style={{ padding: 14 }}>
         <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-lg)', color: 'var(--matrix-mid)', textAlign: 'center', marginBottom: 14 }}>
           "Launch ugly. Fix fast."
@@ -1476,7 +1476,7 @@ const Slide32: SlideFC = ({ meta }) => (
 const Slide33: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="KNOWASIAK.exe — Build in Public"
-      icon="/assets/icons/pixel/laptop.svg" style={{ maxWidth: 1000, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/laptop.svg`} style={{ maxWidth: 1000, width: '100%' }}>
       <div style={{ padding: 14, display: 'flex', gap: 16 }}>
         <div style={{ flex: 1 }}>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 12 }}>
@@ -1520,7 +1520,7 @@ const Slide33: SlideFC = ({ meta }) => (
 const Slide34: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="LOOP.exe — Build → Measure → Learn"
-      icon="/assets/icons/pixel/star_pixel.svg" style={{ maxWidth: 980, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`} style={{ maxWidth: 980, width: '100%' }}>
       <div style={{ padding: 14 }}>
         <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-xs)', color: 'var(--matrix-mid)', marginBottom: 16, textAlign: 'center' }}>
           THE LEAN STARTUP LOOP — KEEP IT SHORT
@@ -1558,7 +1558,7 @@ const Slide35: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <div style={{ position: 'relative', width: '100%', maxWidth: 1000 }}>
     <Window90s title="CHART.exe — Metrics That Matter"
-      icon="/assets/icons/pixel/database.svg" style={{ maxWidth: 1000, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/database.svg`} style={{ maxWidth: 1000, width: '100%' }}>
       <div style={{ padding: 14 }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
           <div>
@@ -1597,7 +1597,7 @@ const Slide36: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'center', width: '100%', maxWidth: 700 }}>
       <ErrorDialog message="Security is not optional." detail="1 breach = 0 users. You are responsible for your users' data." />
-      <Window90s title="REALITY_CHECK.exe" icon="/assets/icons/pixel/shield.svg" style={{ width: '100%' }}>
+      <Window90s title="REALITY_CHECK.exe" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/shield.svg`} style={{ width: '100%' }}>
         <div style={{ padding: 14 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, textAlign: 'center' }}>
             {[
@@ -1620,7 +1620,7 @@ const Slide36: SlideFC = ({ meta }) => (
 const Slide37: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="LOCK.exe — Auth Essentials"
-      icon="/assets/icons/pixel/shield.svg" style={{ maxWidth: 1000, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/shield.svg`} style={{ maxWidth: 1000, width: '100%' }}>
       <div style={{ padding: 14 }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
           {[
@@ -1653,7 +1653,7 @@ const Slide37: SlideFC = ({ meta }) => (
 const Slide38: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="FIREWALL.exe — Rate Limiting + 2FA"
-      icon="/assets/icons/pixel/star_pixel.svg" style={{ maxWidth: 1000, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`} style={{ maxWidth: 1000, width: '100%' }}>
       <div style={{ padding: 14 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 12 }}>
           {[
@@ -1682,7 +1682,7 @@ const Slide39: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <div style={{ position: 'relative', width: '100%', maxWidth: 1000 }}>
     <Window90s title="SECURITY_SCAN.exe — OWASP Top 5"
-      icon="/assets/icons/pixel/shield.svg" style={{ maxWidth: 1000, width: '100%' }}
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/shield.svg`} style={{ maxWidth: 1000, width: '100%' }}
       statusLeft="Open Web Application Security Project" statusRight="owasp.org">
       <div style={{ padding: 14 }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -1723,7 +1723,7 @@ const Slide39: SlideFC = ({ meta }) => (
 const Slide40: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="DOCUMENT.exe — Privacy Policy + Terms"
-      icon="/assets/icons/pixel/laptop.svg" style={{ maxWidth: 980, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/laptop.svg`} style={{ maxWidth: 980, width: '100%' }}>
       <div style={{ padding: 14 }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
           <div>
@@ -1760,7 +1760,7 @@ const Slide41: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <div style={{ position: 'relative', width: '100%', maxWidth: 1000 }}>
     <Window90s title="OPEN_FILE.exe — Free Legal Tools"
-      icon="/assets/icons/pixel/shield.svg" style={{ maxWidth: 1000, width: '100%' }}
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/shield.svg`} style={{ maxWidth: 1000, width: '100%' }}
       statusLeft="All free tiers." statusRight="">
       <div style={{ padding: 14 }}>
         <LogoGrid items={[
@@ -1798,7 +1798,7 @@ const Slide41: SlideFC = ({ meta }) => (
 const Slide42: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="LIST.exe — Full Toolkit"
-      icon="/assets/icons/pixel/star_pixel.svg" menuItems={['File', 'View']}
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`} menuItems={['File', 'View']}
       statusLeft="Everything in one view." statusRight="48 slides"
       style={{ maxWidth: 980, width: '100%' }}>
       <div style={{ padding: 12 }}>
@@ -1829,7 +1829,7 @@ const Slide43: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <div className="desktop-scene" style={{ width: '100%', maxWidth: 980, justifyContent: 'center' }}>
       <Window90s title="ALERT.exe — 5 Things to Remember"
-        icon="/assets/icons/pixel/star_pixel.svg" style={{ flex: 1 }} accentColor="#00FF41">
+        icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`} style={{ flex: 1 }} accentColor="#00FF41">
         <div style={{ padding: 14 }}>
           {[
             { n: '01', text: 'Talk to users BEFORE building.' },
@@ -1863,7 +1863,7 @@ const Slide43: SlideFC = ({ meta }) => (
 const Slide44: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="BMC.exe — Business Model Canvas"
-      icon="/assets/icons/pixel/database.svg" style={{ maxWidth: 980, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/database.svg`} style={{ maxWidth: 980, width: '100%' }}>
       <div style={{ padding: 10 }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1.5fr 1fr 1fr', gridTemplateRows: 'auto auto', gap: 6 }}>
           {[
@@ -1912,7 +1912,7 @@ const Slide44: SlideFC = ({ meta }) => (
 const Slide45: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="KANBAN.exe — Project Management"
-      icon="/assets/icons/pixel/star_pixel.svg" style={{ maxWidth: 1050, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`} style={{ maxWidth: 1050, width: '100%' }}>
       <div style={{ padding: 14, display: 'flex', gap: 16 }}>
         <div style={{ flex: 1 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8, marginBottom: 12 }}>
@@ -1939,7 +1939,7 @@ const Slide45: SlideFC = ({ meta }) => (
           ]} cols={4} />
         </div>
         <div style={{ width: 200 }}>
-          <Dialog90s title="TIME METHODS" icon="/assets/icons/pixel/star_pixel.svg">
+          <Dialog90s title="TIME METHODS" icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`}>
             <div style={{ padding: 8 }}>
               {[
                 { name: 'Time-blocking', desc: '90min focus blocks' },
@@ -1967,7 +1967,7 @@ const Slide45: SlideFC = ({ meta }) => (
 const Slide46: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="CONTRACT.exe — Safe Contracts + NDAs"
-      icon="/assets/icons/pixel/laptop.svg" style={{ maxWidth: 1000, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/laptop.svg`} style={{ maxWidth: 1000, width: '100%' }}>
       <div style={{ padding: 14 }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
           {[
@@ -1999,7 +1999,7 @@ const Slide46: SlideFC = ({ meta }) => (
 const Slide47: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="INTERVIEW.exe — PM Interview Framework"
-      icon="/assets/icons/pixel/star_pixel.svg"
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/star_pixel.svg`}
       statusLeft="Google, Flipkart, Razorpay all run this" statusRight="PLACEMENT PREP"
       style={{ maxWidth: 1050, width: '100%' }}>
       <div style={{ padding: 14, display: 'flex', gap: 14 }}>
@@ -2061,7 +2061,7 @@ const Slide47: SlideFC = ({ meta }) => (
 const Slide48: SlideFC = ({ meta }) => (
   <SlideWrapper meta={meta}>
     <Window90s title="LINKS.exe — Scan Everything"
-      icon="/assets/icons/pixel/pixel_arrow.svg" style={{ maxWidth: 1100, width: '100%' }}>
+      icon={`${import.meta.env.BASE_URL}assets/icons/pixel/pixel_arrow.svg`} style={{ maxWidth: 1100, width: '100%' }}>
       <div style={{ padding: 12 }}>
         <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-md)', color: 'var(--matrix-mid)', textAlign: 'center', marginBottom: 12 }}>
           Keep building.
@@ -2085,7 +2085,7 @@ const Slide48: SlideFC = ({ meta }) => (
           ].map(q => <QRPanel key={q.name} name={q.name} label={q.label} size={52} />)}
         </div>
         <div style={{ display: 'flex', gap: 12, alignItems: 'center', justifyContent: 'center', padding: '10px 0', borderTop: '2px solid var(--panel-border)' }}>
-          <img src="/assets/images/aditya_avatar.png" alt="Aditya Gaurav" style={{ width: 44, height: 44, border: '2px solid var(--panel-border)', objectFit: 'cover' }} />
+          <img src={`${import.meta.env.BASE_URL}assets/images/aditya_avatar.png`} alt="Aditya Gaurav" style={{ width: 44, height: 44, border: '2px solid var(--panel-border)', objectFit: 'cover' }} />
           <div>
             <div style={{ fontFamily: 'Minecraft, monospace', fontSize: 'var(--font-xs)', color: 'var(--matrix-mid)' }}>Aditya Gaurav</div>
             <div style={{ fontFamily: 'ShareTechMono', fontSize: 'var(--font-xs)', color: 'var(--text-muted)', letterSpacing: 2 }}>FOUNDER · KNOWASIAK INC. · SF BAY AREA </div>
