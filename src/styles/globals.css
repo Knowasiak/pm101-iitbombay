@@ -1,0 +1,525 @@
+/* ============================================================
+   globals.css — PM101 Presentation · Matrix Green/Black Theme
+   90s OS aesthetic + Matrix rain background
+   RULE: min font-size 16px · green/black only · red for errors
+   ============================================================ */
+
+/* ── Fonts ─────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Minecraft';
+  src: url('/assets/fonts/Minecraft.ttf') format('truetype');
+  font-weight: normal; font-display: block;
+}
+@font-face {
+  font-family: 'ShareTechMono';
+  src: url('/assets/fonts/ShareTechMono.ttf') format('truetype');
+  font-weight: normal; font-display: block;
+}
+@font-face {
+  font-family: 'VT323';
+  src: url('/assets/fonts/VT323.ttf') format('truetype');
+  font-weight: normal; font-display: block;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('/assets/fonts/Manrope-Regular.ttf') format('truetype');
+  font-weight: 400; font-display: block;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('/assets/fonts/Manrope-Bold.ttf') format('truetype');
+  font-weight: 700; font-display: block;
+}
+@font-face {
+  font-family: 'SpaceMono';
+  src: url('/assets/fonts/SpaceMono-Regular.ttf') format('truetype');
+  font-weight: normal; font-display: block;
+}
+
+/* Design Tokens */
+:root {
+  --bg:              #000000;
+  --bg-deep:         #020402;
+  --matrix-green:    #00FF41;
+  --matrix-hi:       #39FF14;
+  --matrix-mid:      #00CC33;
+  --matrix-dim:      #007722;
+  --matrix-dark:     #003311;
+  --matrix-darkest:  #001A08;
+  --panel-bg:        #080E08;
+  --panel-bg-dark:   #050A05;
+  --panel-border:    #1A4A1A;
+  --panel-border-hi: #00FF41;
+  --panel-border-lo: #001A00;
+  --title-bg:        #001500;
+  --title-bg-hi:     #003300;
+  --title-fg:        #00FF41;
+  --title-active:    #000A00;
+  --btn-bg:          #0A1A0A;
+  --btn-hi:          #00AA22;
+  --btn-lo:          #000A00;
+  --btn-green:       #00CC33;
+  --btn-green-hi:    #00FF41;
+  --btn-red:         #FF2222;
+  --btn-red-dark:    #990000;
+  --btn-text:        #00FF41;
+  --text-primary:    #00FF41;
+  --text-secondary:  #00CC33;
+  --text-muted:      #007722;
+  --text-dim:        #004411;
+  --text-error:      #FF2222;
+  --text-warning:    #FFAA00;
+  --win-shadow:    4px 4px 0px #000000, 0 0 20px rgba(0,255,65,0.15);
+  --win-shadow-lg: 6px 6px 0px #000000, 0 0 40px rgba(0,255,65,0.2);
+  --glow-sm:       0 0 8px rgba(0,255,65,0.6);
+  --glow-md:       0 0 16px rgba(0,255,65,0.5);
+  --glow-lg:       0 0 32px rgba(0,255,65,0.4);
+  --act-hook:        #00FF41;
+  --act-truth:       #FF2222;
+  --act-ideate:      #00FF41;
+  --act-build:       #00CC33;
+  --act-design:      #00FF41;
+  --act-ai:          #39FF14;
+  --act-launch:      #00CC33;
+  --act-security:    #FF2222;
+  --act-legal:       #007722;
+  --act-close:       #00FF41;
+  --act-appendix:    #00AA22;
+
+  /* Typography Scale - MINIMUM 16px in content */
+  --font-xs:   16px;
+  --font-sm:   17px;
+  --font-base: 18px;
+  --font-md:   20px;
+  --font-lg:   24px;
+  --font-xl:   32px;
+  --font-2xl:  42px;
+  --font-3xl:  56px;
+  --font-4xl:  80px;
+  --font-nav:  13px; /* EXCEPTION: nav chrome only */
+  --font-win:  12px; /* EXCEPTION: window title chrome only */
+
+  --slide-pad: 1rem;
+  --win-pad: 1rem;
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  font-family: 'ShareTechMono', monospace;
+  font-size: var(--font-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+#root { width: 100vw; height: 100vh; overflow: hidden; position: relative; }
+
+/* Matrix canvas */
+.matrix-canvas {
+  position: fixed; top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none; z-index: 0;
+  opacity: 0.22;
+}
+
+/* Scanlines */
+.scanlines::after {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 998;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.07) 2px, rgba(0,0,0,0.07) 3px);
+}
+
+/* Window chrome */
+.win {
+  background: var(--panel-bg);
+  border: 2px solid;
+  border-color: var(--panel-border-hi) var(--panel-border-lo) var(--panel-border-lo) var(--panel-border-hi);
+  box-shadow: var(--win-shadow);
+  position: relative;
+  display: flex; flex-direction: column;
+  margin:auto;
+}
+.win-titlebar {
+  background: var(--title-bg);
+  padding: 4px 8px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 6px; user-select: none; flex-shrink: 0;
+  border-bottom: 1px solid var(--panel-border);
+}
+.win-titlebar-gradient {
+  background: linear-gradient(90deg, var(--title-active) 0%, var(--title-bg-hi) 40%, var(--title-bg) 100%);
+}
+.win-title {
+  font-family: 'Minecraft', monospace;
+  font-size: var(--font-win);
+  color: var(--title-fg);
+  letter-spacing: 1px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  flex: 1;
+  text-shadow: var(--glow-sm);
+}
+.win-controls { display: flex; gap: 3px; flex-shrink: 0; }
+.win-ctrl {
+  width: 16px; height: 16px;
+  background: var(--btn-bg);
+  border: 1px solid;
+  border-color: var(--btn-hi) var(--btn-lo) var(--btn-lo) var(--btn-hi);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; cursor: pointer;
+  color: var(--matrix-green); font-family: monospace; line-height: 1;
+}
+.win-ctrl:hover { background: var(--matrix-dark); color: var(--matrix-hi); }
+.win-ctrl:active { border-color: var(--btn-lo) var(--btn-hi) var(--btn-hi) var(--btn-lo); }
+.win-body { flex: 1; overflow: hidden; padding: var(--win-pad); color: var(--text-primary); }
+.win-menubar {
+  background: var(--panel-bg-dark);
+  border-bottom: 1px solid var(--panel-border);
+  padding: 3px 8px; display: flex; gap: 16px; flex-shrink: 0;
+}
+.win-menubar-item {
+  font-family: 'ShareTechMono', monospace;
+  font-size: var(--font-nav);
+  color: var(--text-secondary); cursor: pointer; padding: 2px 6px;
+  user-select: none; letter-spacing: 1px;
+}
+.win-menubar-item:hover, .win-menubar-item.active {
+  background: var(--matrix-dark); color: var(--matrix-green);
+}
+.win-statusbar {
+  background: var(--panel-bg-dark);
+  border-top: 1px solid var(--panel-border);
+  padding: 3px 10px;
+  font-family: 'ShareTechMono', monospace;
+  font-size: var(--font-nav); color: var(--text-muted);
+  display: flex; justify-content: space-between; flex-shrink: 0;
+  letter-spacing: 1px;
+}
+
+/* 90s Buttons */
+.btn90 {
+  background: var(--btn-bg);
+  border: 2px solid;
+  border-color: var(--btn-hi) var(--btn-lo) var(--btn-lo) var(--btn-hi);
+  padding: 6px 20px;
+  font-family: 'Minecraft', monospace;
+  font-size: var(--font-nav);
+  font-weight: 700; color: var(--matrix-green);
+  cursor: pointer; display: inline-flex; align-items: center;
+  gap: 6px; min-width: 72px; justify-content: center;
+  user-select: none; letter-spacing: 1px; transition: none;
+  white-space: nowrap; text-shadow: var(--glow-sm);
+}
+.btn90:hover { background: var(--matrix-darkest); color: var(--matrix-hi); box-shadow: var(--glow-sm); }
+.btn90:active, .btn90.pressed {
+  border-color: var(--btn-lo) var(--btn-hi) var(--btn-hi) var(--btn-lo);
+  transform: translate(1px,1px);
+}
+.btn90.ok     { background: var(--matrix-dark); color: var(--matrix-green); border-color: var(--matrix-mid) var(--matrix-darkest) var(--matrix-darkest) var(--matrix-mid); }
+.btn90.danger { background: #1A0000; color: var(--btn-red); border-color: #AA0000 #330000 #330000 #AA0000; }
+.btn90.lg     { padding: 10px 32px; font-size: var(--font-xs); }
+
+/* Progress bar */
+.prog90 {
+  height: 20px; background: #000800;
+  border: 2px solid;
+  border-color: var(--btn-lo) var(--btn-hi) var(--btn-hi) var(--btn-lo);
+  overflow: hidden; position: relative;
+}
+.prog90-fill {
+  height: 100%;
+  background: repeating-linear-gradient(90deg, var(--matrix-dim) 0px, var(--matrix-dim) 14px, var(--matrix-mid) 14px, var(--matrix-mid) 16px);
+  transition: width 0.5s ease;
+  box-shadow: 0 0 6px rgba(0,255,65,0.4);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 14px; height: 14px; }
+::-webkit-scrollbar-track { background: var(--panel-bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--matrix-dark); border: 2px solid; border-color: var(--matrix-dim) var(--matrix-darkest) var(--matrix-darkest) var(--matrix-dim); }
+::-webkit-scrollbar-thumb:hover { background: var(--matrix-mid); }
+
+/* Typography utilities */
+.font-minecraft { font-family: 'Minecraft', monospace !important; }
+.font-mono      { font-family: 'ShareTechMono', monospace !important; }
+.font-vt        { font-family: 'VT323', monospace !important; }
+.font-body      { font-family: 'Manrope', sans-serif !important; }
+.font-space     { font-family: 'SpaceMono', monospace !important; }
+.t-green  { color: var(--matrix-green) !important; }
+.t-mid    { color: var(--matrix-mid)   !important; }
+.t-muted  { color: var(--text-muted)   !important; }
+.t-red    { color: var(--btn-red)      !important; }
+
+/* Headings - big & green */
+h1, .h1 {
+  font-family: 'Minecraft', monospace;
+  font-size: clamp(var(--font-xl), 3.5vw, var(--font-2xl));
+  color: var(--matrix-green);
+  letter-spacing: 2px; line-height: 1.2;
+  text-shadow: var(--glow-md);
+}
+h2, .h2 {
+  font-family: 'Minecraft', monospace;
+  font-size: clamp(var(--font-lg), 2.5vw, var(--font-xl));
+  color: var(--matrix-mid);
+  letter-spacing: 1px; line-height: 1.3;
+  text-shadow: var(--glow-sm);
+}
+h3, .h3 {
+  font-family: 'ShareTechMono', monospace;
+  font-size: clamp(var(--font-base), 1.8vw, var(--font-md));
+  color: var(--text-secondary);
+  letter-spacing: 2px; text-transform: uppercase; line-height: 1.4;
+}
+p, li, td, .body-text {
+  font-family: 'ShareTechMono', monospace;
+  font-size: var(--font-base);
+  color: var(--text-primary); line-height: 1.6;
+}
+
+/* Big stat */
+.stat-big {
+  font-family: 'Minecraft', monospace;
+  font-size: clamp(var(--font-3xl), 9vw, var(--font-4xl));
+  line-height: 1; color: var(--matrix-green); text-shadow: var(--glow-lg);
+}
+.stat-label {
+  font-family: 'ShareTechMono', monospace;
+  font-size: var(--font-xs); color: var(--text-muted);
+  letter-spacing: 4px; text-transform: uppercase;
+}
+
+/* Divider */
+.divider90 {
+  width: 100%; height: 2px;
+  background: var(--panel-border);
+  border-top: 1px solid var(--matrix-darkest);
+  border-bottom: 1px solid var(--matrix-dim);
+  margin: 10px 0;
+}
+
+/* Inset */
+.inset90 {
+  background: #0a290a; border: 2px solid;
+  border-color: var(--btn-lo) var(--btn-hi) var(--btn-hi) var(--btn-lo);
+  padding: 8px 12px;
+  font-family: 'ShareTechMono', monospace;
+  font-size: var(--font-base); color: var(--matrix-green); line-height: 1.5;
+}
+
+/* Logo grid */
+.logo-cell {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 8px; padding: 12px 10px;
+  background: var(--panel-bg-dark); border: 1px solid var(--panel-border);
+  transition: border-color 0.15s;
+}
+.logo-cell:hover { border-color: var(--matrix-green); box-shadow: var(--glow-sm); }
+.logo-cell img { width: 40px; height: 40px; object-fit: contain; filter: brightness(1.1); }
+.logo-cell span { font-size: var(--font-xs); font-family: 'ShareTechMono', monospace; color: var(--text-secondary); text-align: center; letter-spacing: 1px; }
+
+/* QR panel */
+.qr-panel { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px; background: var(--panel-bg-dark); border: 2px solid var(--panel-border); }
+.qr-panel img { image-rendering: pixelated; }
+.qr-panel span { font-size: var(--font-xs); font-family: 'ShareTechMono', monospace; color: var(--matrix-mid); text-align: center; letter-spacing: 2px; }
+
+/* Chest marker */
+.chest-marker {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 16px; background: #0A0800;
+  border: 2px solid; border-color: #446600 #223300 #223300 #446600;
+  box-shadow: 2px 2px 0 #000;
+}
+.chest-marker img { width: 32px; height: 32px; image-rendering: pixelated; }
+.chest-marker span { font-family: 'Minecraft', monospace; font-size: var(--font-xs); color: #88BB00; letter-spacing: 1px; }
+
+/* Act badge */
+.act-badge {
+  display: inline-block; padding: 3px 12px;
+  font-family: 'Minecraft', monospace; font-size: var(--font-nav);
+  letter-spacing: 3px; color: var(--matrix-green);
+  background: var(--title-bg); border: 1px solid var(--panel-border-hi);
+  text-transform: uppercase; text-shadow: var(--glow-sm);
+}
+
+/* Slide stage */
+.slide-stage {
+  position: relative; z-index: 1;
+  width: 100vw; height: calc(100vh - 44px);
+  padding: var(--slide-pad);
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Desktop scatter — messy overlapping windows */
+.desktop-scene {
+  position: relative; width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.2vw;
+}
+.desktop-scene > .win:nth-child(odd)  { transform: rotate(-0.7deg) translate(-4px, 5px); }
+.desktop-scene > .win:nth-child(even) { transform: rotate(0.6deg) translate(5px, -4px); }
+.desktop-scene > *:nth-child(1) { z-index: 4; position: relative; }
+.desktop-scene > *:nth-child(2) { z-index: 3; position: relative; margin-top: -12px; }
+.desktop-scene > *:nth-child(3) { z-index: 2; position: relative; margin-top: 10px; }
+.desktop-scene > *:nth-child(4) { z-index: 1; position: relative; margin-top: -8px; }
+
+.stack-pane { display: flex; flex-direction: column; gap: 0; position: relative; }
+.stack-pane > * { position: relative; }
+.stack-pane > *:nth-child(2) { margin-top: -14px; z-index: 2; transform: rotate(0.5deg) translate(8px, 0); }
+.stack-pane > *:nth-child(3) { margin-top: -10px; z-index: 1; transform: rotate(-0.4deg) translate(-6px, 0); }
+.stack-pane > *:nth-child(4) { margin-top: -8px;  z-index: 0; transform: rotate(0.7deg) translate(4px, 0); }
+
+/* Slide transitions */
+@keyframes slideIn  { from { opacity: 0; transform: translateY(-16px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes slideOut { from { opacity: 1; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(10px) scale(0.98); } }
+
+/* Nav bar */
+.nav-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; height: 44px;
+  background: var(--panel-bg-dark);
+  border-top: 2px solid var(--panel-border-hi);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px; z-index: 100; gap: 12px;
+  box-shadow: 0 -4px 20px rgba(0,255,65,0.1);
+}
+.nav-slide-counter { font-family: 'Minecraft', monospace; font-size: var(--font-nav); color: var(--matrix-mid); letter-spacing: 3px; flex: 1; text-align: center; text-shadow: var(--glow-sm); }
+.nav-act-label { font-family: 'ShareTechMono', monospace; font-size: var(--font-nav); color: var(--text-muted); letter-spacing: 3px; text-transform: uppercase; min-width: 120px; }
+
+/* Section divider */
+.section-divider { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; text-align: center; width: 100%; height: 100%; }
+.section-num { font-family: 'VT323', monospace; font-size: clamp(5rem, 18vw, 14rem); color: rgba(0,255,65,0.04); line-height: 1; position: absolute; user-select: none; pointer-events: none; }
+
+/* Code block */
+.code-block {
+  background: #000800; border: 1px solid var(--matrix-dark);
+  border-left: 3px solid var(--matrix-mid);
+  padding: 10px 14px;
+  font-family: 'ShareTechMono', monospace;
+  font-size: var(--font-xs); color: var(--matrix-mid); line-height: 1.6; overflow-x: auto;
+}
+.code-block .kw  { color: var(--matrix-green); font-weight: bold; }
+.code-block .str { color: #88CC44; }
+.code-block .cm  { color: var(--text-dim); font-style: italic; }
+
+/* Pixel icon helpers */
+.pxicon    { display: inline-block; width: 24px; height: 24px; vertical-align: middle; margin-right: 8px; image-rendering: pixelated; filter: drop-shadow(0 0 4px rgba(0,255,65,0.5)); }
+.pxicon-lg { display: inline-block; width: 32px; height: 32px; vertical-align: middle; margin-right: 10px; image-rendering: pixelated; filter: drop-shadow(0 0 6px rgba(0,255,65,0.5)); }
+.pxicon-xl { display: inline-block; width: 48px; height: 48px; vertical-align: middle; margin-right: 12px; image-rendering: pixelated; filter: drop-shadow(0 0 10px rgba(0,255,65,0.6)); }
+
+/* Tool pill */
+.tool-pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; background: var(--matrix-dark); border: 1px solid var(--matrix-dim); font-family: 'ShareTechMono', monospace; font-size: var(--font-xs); color: var(--matrix-green); letter-spacing: 1px; }
+.tool-pill:hover { border-color: var(--matrix-green); box-shadow: var(--glow-sm); }
+
+/* Flow arrow */
+.flow-arrow { display: flex; align-items: center; gap: 8px; font-family: 'ShareTechMono', monospace; font-size: var(--font-xs); color: var(--text-secondary); }
+.flow-arrow::before { content: '>>>'; color: var(--matrix-dim); letter-spacing: -2px; }
+
+/* Image rendering */
+img { image-rendering: auto; max-width: 100%; height: auto; display: block; }
+img[src*="/icons/pixel/"] { image-rendering: pixelated; filter: drop-shadow(0 0 4px rgba(0,255,65,0.4)); }
+/* UI icons rendered in matrix-mid green (#00CC33) */
+img[src*="/icons/ui/"] {
+  image-rendering: auto;
+  filter: brightness(0) saturate(100%) invert(53%) sepia(93%) saturate(462%) hue-rotate(88deg) brightness(102%) contrast(105%);
+}
+img[src*="/logos/"] { filter: brightness(0.5) invert(1) sepia(1) hue-rotate(45deg) saturate(5);image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+.qr-panel img{filter: invert(1) sepia(1) hue-rotate(45deg) saturate(50);}
+img[src="/assets/icons/pixel/pixel_arrow.svg"] {
+    filter: invert(1) sepia(1) hue-rotate(45deg) saturate(50) drop-shadow(rgba(0, 255, 65, 0.6) 0px 0px 3px) !important;
+}
+/* Floating chest tip */
+.chest-float {
+  position: absolute; bottom: -66px; right: 20px; z-index: 10;
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px;
+  background: #0A0800;
+  border: 2px solid;
+  border-color: #446600 #223300 #223300 #446600;
+  box-shadow: 2px 2px 0 #000, 0 0 12px rgba(0,255,65,0.15);
+  cursor: pointer;
+  max-width: 380px;
+}
+.chest-float img { width: 32px; height: 32px; image-rendering: pixelated; flex-shrink: 0; }
+.chest-float-body { display: flex; flex-direction: column; gap: 2px; }
+.chest-float-label { font-family: 'Minecraft', monospace; font-size: 11px; color: #88BB00; letter-spacing: 1px; text-transform: uppercase; }
+.chest-float-tip { font-family: 'ShareTechMono', monospace; font-size: var(--font-xs); color: var(--text-primary); line-height: 1.4; display: none; margin-top: 4px; }
+.chest-float:hover .chest-float-tip { display: block; }
+.chest-float:hover { border-color: var(--matrix-dim) #223300 #223300 var(--matrix-dim); box-shadow: 2px 2px 0 #000, 0 0 20px rgba(0,255,65,0.3); }
+
+/* Glow text */
+.glow-text { text-shadow: var(--glow-md); color: var(--matrix-green); }
+
+/* Error box */
+.error-box { background: #1A0000; border: 2px solid var(--btn-red); border-color: #AA0000 #330000 #330000 #AA0000; padding: 10px 14px; color: var(--btn-red); font-family: 'ShareTechMono', monospace; font-size: var(--font-xs); }
+
+/* Misc */
+.check90 { display: flex; align-items: center; gap: 8px; font-size: var(--font-base); font-family: 'ShareTechMono', monospace; color: var(--text-primary); cursor: pointer; }
+.check90-box { width: 16px; height: 16px; background: #000800; border: 2px solid; border-color: var(--btn-lo) var(--btn-hi) var(--btn-hi) var(--btn-lo); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--matrix-green); }
+.folder-icon { display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; }
+.folder-label { font-size: var(--font-xs); font-family: 'ShareTechMono', monospace; color: var(--text-secondary); text-align: center; max-width: 72px; word-break: break-word; line-height: 1.2; }
+
+/* ============================================================
+   Slide semantic typography classes
+   Use these className="..." instead of inline fontFamily/fontSize/color.
+   ALL are ShareTechMono body / Minecraft headings at base 16px minimum.
+   ============================================================ */
+
+/* Headings */
+.s-h1   { font-family: 'Minecraft', monospace; font-size: var(--font-xl);   color: var(--matrix-green); letter-spacing: 2px; line-height: 1.2; text-shadow: var(--glow-md); }
+.s-h2   { font-family: 'Minecraft', monospace; font-size: var(--font-lg);   color: var(--matrix-mid);   letter-spacing: 1px; line-height: 1.3; text-shadow: var(--glow-sm); }
+.s-h3   { font-family: 'Minecraft', monospace; font-size: var(--font-md);   color: var(--matrix-mid);   letter-spacing: 1px; line-height: 1.3; }
+.s-h4   { font-family: 'Minecraft', monospace; font-size: var(--font-xs);   color: var(--matrix-mid);   letter-spacing: 2px; text-transform: uppercase; }
+.s-label{ font-family: 'ShareTechMono', monospace; font-size: var(--font-xs); color: var(--text-secondary); letter-spacing: 3px; text-transform: uppercase; }
+
+/* Body text */
+.s-body { font-family: 'ShareTechMono', monospace; font-size: var(--font-xs); color: var(--text-primary);   line-height: 1.6; }
+.s-muted{ font-family: 'ShareTechMono', monospace; font-size: var(--font-xs); color: var(--text-muted);     line-height: 1.5; }
+.s-rule { font-family: 'ShareTechMono', monospace; font-size: var(--font-xs); color: var(--matrix-dim);     font-weight: 700; line-height: 1.5; }
+.s-name { font-family: 'Minecraft', monospace; font-size: var(--font-xs); color: var(--text-primary); }
+
+/* Status colors */
+.s-bad  { font-family: 'Minecraft', monospace; font-size: var(--font-xs); color: var(--btn-red); }
+.s-good { font-family: 'Minecraft', monospace; font-size: var(--font-xs); color: var(--matrix-green); }
+.s-ok   { font-family: 'Minecraft', monospace; font-size: var(--font-xs); color: var(--matrix-mid); }
+
+/* Slide card — standard content box */
+.s-card {
+  padding: 10px 12px;
+  background: var(--panel-bg-dark);
+  border: 1px solid var(--panel-border);
+}
+.s-card-red {
+  padding: 10px 12px;
+  background: #1A0000;
+  border: 1px solid rgba(217,83,79,0.35);
+}
+.s-card-green {
+  padding: 10px 12px;
+  background: var(--matrix-darkest);
+  border: 1px solid var(--matrix-dim);
+}
+
+/* Tool row — logo + name + description inline */
+.s-tool-row { display: flex; gap: 10px; align-items: flex-start; padding: 8px 12px; background: var(--panel-bg-dark); border: 1px solid var(--panel-border); }
+.s-tool-row img { width: 28px; height: 28px; object-fit: contain; flex-shrink: 0; margin-top: 2px; }
+
+/* Stat callout */
+.s-stat { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px 16px; }
+.s-stat-num { font-family: 'Minecraft', monospace; font-size: var(--font-2xl); color: var(--matrix-green); line-height: 1; text-shadow: var(--glow-lg); }
+.s-stat-num.red { color: var(--btn-red); text-shadow: 0 0 20px rgba(217,83,79,0.5); }
+.s-stat-lbl { font-family: 'ShareTechMono', monospace; font-size: var(--font-xs); color: var(--text-muted); letter-spacing: 4px; text-transform: uppercase; margin-top: 4px; }
+
+/* Rule callout box */
+.s-rule-box {
+  padding: 8px 14px;
+  background: #0A0800;
+  border: 2px solid var(--matrix-dim);
+  font-family: 'ShareTechMono', monospace;
+  font-size: var(--font-xs);
+  font-weight: 700;
+  color: var(--matrix-dim);
+  line-height: 1.5;
+}

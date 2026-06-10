@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="97" height="32" viewBox="0 0 97 32">
+  <rect width="97" height="32" rx="4" fill="#007ACC"/>
+  <text x="48.5" y="21" font-family="monospace" font-size="13" font-weight="bold"
+        fill="#FFFFFF" text-anchor="middle">VS Code</text>
+</svg>

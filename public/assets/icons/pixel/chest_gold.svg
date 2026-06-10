@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" shape-rendering="crispEdges">
+    <!-- Chest body -->
+    <rect x="4" y="24" width="56" height="36" fill="#8B5E3C"/>
+    <rect x="6" y="26" width="52" height="32" fill="#A0714F"/>
+    <!-- Lid -->
+    <rect x="4" y="12" width="56" height="14" fill="#8B5E3C"/>
+    <rect x="6" y="14" width="52" height="10" fill="#B8825C"/>
+    <!-- Gold trim - top -->
+    <rect x="4" y="12" width="56" height="2" fill="#F5C518"/>
+    <rect x="4" y="24" width="56" height="2" fill="#F5C518"/>
+    <!-- Gold trim - sides -->
+    <rect x="4" y="12" width="2" height="48" fill="#F5C518"/>
+    <rect x="58" y="12" width="2" height="48" fill="#F5C518"/>
+    <!-- Bottom -->
+    <rect x="4" y="58" width="56" height="2" fill="#F5C518"/>
+    <!-- Lock -->
+    <rect x="28" y="20" width="8" height="8" fill="#F5C518"/>
+    <rect x="30" y="22" width="4" height="4" fill="#8B5E3C"/>
+    <!-- Highlights -->
+    <rect x="8" y="16" width="40" height="2" fill="rgba(255,255,255,0.3)"/>
+    <rect x="8" y="28" width="40" height="2" fill="rgba(255,255,255,0.2)"/>
+  </svg>

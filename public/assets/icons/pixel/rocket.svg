@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 48" shape-rendering="crispEdges">
+    <!-- Body -->
+    <rect x="12" y="8" width="8" height="24" fill="#FFFFFF"/>
+    <!-- Nose cone -->
+    <rect x="12" y="4" width="8" height="4" fill="#EEEEEE"/>
+    <rect x="14" y="0" width="4" height="4" fill="#EEEEEE"/>
+    <!-- Window -->
+    <rect x="14" y="12" width="4" height="4" fill="#7FF4FF"/>
+    <!-- Wings -->
+    <rect x="6" y="24" width="6" height="8" fill="#CCCCCC"/>
+    <rect x="20" y="24" width="6" height="8" fill="#CCCCCC"/>
+    <!-- Flame -->
+    <rect x="14" y="32" width="4" height="4" fill="#FF8C00"/>
+    <rect x="13" y="36" width="6" height="4" fill="#FF4500"/>
+    <rect x="14" y="40" width="4" height="4" fill="#FF8C00"/>
+    <rect x="15" y="44" width="2" height="4" fill="#FFD700"/>
+  </svg>

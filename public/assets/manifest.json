@@ -1,0 +1,193 @@
+{
+  "generated": "2026-06-09T21:51:33.424Z",
+  "fonts": [
+    "fonts/PressStart2P.woff2",
+    "fonts/Manrope.woff2",
+    "fonts/SpaceMono-Regular.woff2",
+    "fonts/ShareTechMono.woff2",
+    "fonts/VT323.woff2"
+  ],
+  "logos": [
+    "logos/github.svg",
+    "logos/vercel.svg",
+    "logos/netlify.svg",
+    "logos/cloudflare.svg",
+    "logos/railway.svg",
+    "logos/supabase.svg",
+    "logos/firebase.svg",
+    "logos/postgresql.svg",
+    "logos/sqlite.svg",
+    "logos/planetscale.svg",
+    "logos/figma.svg",
+    "logos/framer.svg",
+    "logos/canva.svg",
+    "logos/python.svg",
+    "logos/vue.svg",
+    "logos/php.svg",
+    "logos/javascript.svg",
+    "logos/typescript.svg",
+    "logos/html5.svg",
+    "logos/css3.svg",
+    "logos/react.svg",
+    "logos/n8n.svg",
+    "logos/openai.svg",
+    "logos/anthropic.svg",
+    "logos/ollama.svg",
+    "logos/producthunt.svg",
+    "logos/discord.svg",
+    "logos/reddit.svg",
+    "logos/hackernews.svg",
+    "logos/x.svg",
+    "logos/notion.svg",
+    "logos/trello.svg",
+    "logos/linear.svg",
+    "logos/jira.svg",
+    "logos/letsencrypt.svg",
+    "logos/iubenda.svg",
+    "logos/vscode.svg",
+    "logos/replit.svg",
+    "logos/loom.svg",
+    "logos/zoom.svg",
+    "logos/slack.svg",
+    "logos/typeform.svg",
+    "logos/v0dev.ico",
+    "logos/bolt.svg",
+    "logos/cursor.ico",
+    "logos/ollama_icon.png",
+    "images/iitb_logo.png",
+    "logos/tally.ico",
+    "logos/termly.ico",
+    "logos/framer_icon.png",
+    "logos/carrd.svg",
+    "logos/knowasiak.ico",
+    "logos/runwayml.ico"
+  ],
+  "icons": {
+    "ui": [
+      "icons/ui/rocket-launch.svg",
+      "icons/ui/lightning.svg",
+      "icons/ui/target.svg",
+      "icons/ui/code.svg",
+      "icons/ui/database.svg",
+      "icons/ui/lock.svg",
+      "icons/ui/shield-check.svg",
+      "icons/ui/users.svg",
+      "icons/ui/chart-line.svg",
+      "icons/ui/arrow-right.svg",
+      "icons/ui/check-circle.svg",
+      "icons/ui/x-circle.svg",
+      "icons/ui/globe.svg",
+      "icons/ui/building.svg",
+      "icons/ui/briefcase.svg",
+      "icons/ui/graduation-cap.svg",
+      "icons/ui/flask.svg",
+      "icons/ui/gear.svg",
+      "icons/ui/terminal.svg",
+      "icons/ui/git-branch.svg",
+      "icons/ui/cloud.svg",
+      "icons/ui/bug.svg",
+      "icons/ui/currency-dollar.svg",
+      "icons/ui/trend-up.svg",
+      "icons/ui/megaphone.svg",
+      "icons/ui/chat-circle.svg",
+      "icons/ui/clock.svg",
+      "icons/ui/calendar.svg",
+      "icons/ui/list-checks.svg",
+      "icons/ui/kanban.svg",
+      "icons/ui/key.svg",
+      "icons/ui/link.svg",
+      "icons/ui/wifi.svg",
+      "icons/ui/cpu.svg",
+      "icons/ui/monitor.svg",
+      "icons/ui/device-mobile.svg",
+      "icons/ui/pencil.svg",
+      "icons/ui/eye.svg",
+      "icons/ui/heart.svg",
+      "icons/ui/star.svg",
+      "icons/ui/warning.svg",
+      "icons/ui/question.svg",
+      "icons/ui/info.svg",
+      "icons/ui/hand-waving.svg",
+      "icons/ui/map-pin.svg",
+      "icons/ui/file-text.svg",
+      "icons/ui/invoice.svg",
+      "icons/ui/robot.svg",
+      "icons/ui/brain.svg",
+      "icons/ui/package.svg"
+    ],
+    "pixel": [
+      "icons/pixel/chest_gold.svg",
+      "icons/pixel/chest_diamond.svg",
+      "icons/pixel/chest_iron.svg",
+      "icons/pixel/star_pixel.svg",
+      "icons/pixel/block_green.svg",
+      "icons/pixel/pixel_arrow.svg"
+    ]
+  },
+  "previews": [
+    "previews/figma_pixel_shapes.png",
+    "previews/figma_3d_icons.png",
+    "previews/figma_minecraft_chests.png",
+    "previews/figma_pixel_shapes_cover.png",
+    "previews/figma_3d_icons_cover.png",
+    "previews/figma_chest_cover.png"
+  ],
+  "qr": [
+    {
+      "url": "https://adityagaurav.com",
+      "file": "qr/adityagaurav.png"
+    },
+    {
+      "url": "https://www.knowasiak.com",
+      "file": "qr/knowasiak.png"
+    },
+    {
+      "url": "https://www.linkedin.com/in/adityagauravkc",
+      "file": "qr/linkedin.png"
+    },
+    {
+      "url": "https://twitter.com/adityagauravkc",
+      "file": "qr/twitter.png"
+    },
+    {
+      "url": "https://v0.dev",
+      "file": "qr/v0dev.png"
+    },
+    {
+      "url": "https://bolt.new",
+      "file": "qr/bolt.png"
+    },
+    {
+      "url": "https://cursor.sh",
+      "file": "qr/cursor.png"
+    },
+    {
+      "url": "https://ollama.com",
+      "file": "qr/ollama.png"
+    },
+    {
+      "url": "https://n8n.io",
+      "file": "qr/n8n.png"
+    },
+    {
+      "url": "https://vercel.com",
+      "file": "qr/vercel.png"
+    },
+    {
+      "url": "https://supabase.com",
+      "file": "qr/supabase.png"
+    },
+    {
+      "url": "https://figma.com",
+      "file": "qr/figma.png"
+    },
+    {
+      "url": "https://producthunt.com",
+      "file": "qr/producthunt.png"
+    },
+    {
+      "url": "https://termly.io",
+      "file": "qr/termly.png"
+    }
+  ]
+}
