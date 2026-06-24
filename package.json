@@ -1,7 +1,8 @@
 {
-  "name": "presentation",
+  "name": "pm101-iitbombay",
+  "description": "Interactive, retro-themed 90s OS styled slide deck presentation for Product Management (PM101) course delivered at IIT Bombay.",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

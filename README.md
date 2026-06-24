@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# PM101 — Product Management 101 (IIT Bombay)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Stack](https://img.shields.io/badge/Stack-React%2019%20%7C%20TypeScript%20%7C%20Vite-0f172a?style=for-the-badge&logo=react&logoColor=%2361dafb)](https://github.com/Knowasiak/pm101-iitbombay)
+[![Delivered At](https://img.shields.io/badge/Delivered%20At-IIT%20Bombay-red?style=for-the-badge&logo=education&logoColor=white&labelColor=0f172a&color=a855f7)](https://github.com/Knowasiak/pm101-iitbombay)
+[![Design](https://img.shields.io/badge/Design-Retro%2090s%20OS-emerald?style=for-the-badge&logo=windowsterminal&logoColor=white&labelColor=0f172a)](https://github.com/Knowasiak/pm101-iitbombay)
 
-Currently, two official plugins are available:
+An interactive, retro-themed 90s OS styled slide deck presentation covering the foundations of Product Thinking and Product Management, delivered to students and builders at the **ShARE Career Cell, Indian Institute of Technology (IIT) Bombay**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🌟 Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🕹️ Retro 90s Cyberpunk Aesthetic
+- **Classic UI Elements**: Styled with nostalgic Windows 95/98 window containers, warning dialogs, pixel art icons, scanlines, and retro CRT screen filters.
+- **Matrix Code Rain Background**: Built-in canvas-based green falling code rain effect (`MatrixRain.tsx`) reacting to the page theme.
+- **Micro-interactions**: Classic click buttons, physical progress bars, and hidden chests revealing bonus product management tips.
 
-## Expanding the ESLint configuration
+### 📐 Responsive Stage Scaling
+- Scales a fixed 1280×720 viewport stage dynamically using CSS transforms to fit any modern screen or projector resolution without breaking typography or absolute layouts.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 📚 Course Syllabus & Slide Acts (48 Slides)
+The presentation is structured into 9 chronological acts:
+1. **ACT 0 — Intro**: Presenter profile, learning goals, and setting expectations.
+2. **ACT 1 — Honest Truth**: The brutal reality of product failure (95% fail due to lack of market need, not bad code) and the real definition of a PM.
+3. **ACT 2 — Ideate**: Falling in love with the problem over the solution, user discovery templates, and the PRD structure.
+4. **ACT 3 — Build Smart**: YAGNI (You Aren't Gonna Need It) architecture, start simple (SQLite/Vercel) and move to complex scaling later.
+5. **ACT 4 — Design**: Wireframes, rapid Figma workflows, and cognitive UX frameworks.
+6. **ACT 5 — AI · Automate**: Product development with LLM integration, automating mockups, and AI coding agents.
+7. **ACT 6 — Launch**: Go-To-Market strategies, Product Hunt/Hacker News launches, and post-launch analytics.
+8. **ACT 7 — Security**: Basic web application security rules, SSL monitoring, and identity shielding.
+9. **ACT 8 — Legal & Compliance**: Understanding regulatory deadlines (e.g., India's DPDP Act, GDPR) and why compliance is non-optional.
+10. **ACT 9 — Appendix**: Interactive Q&A and linked PM toolkits.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ⚙️ Tech Stack & Dependencies
+- **Core**: React 19, TypeScript, Vite
+- **Animations**: Framer Motion (v12) for smooth slide-to-slide liquid transitions and alert animations.
+- **Icons**: `@phosphor-icons/react` for unified styling.
+- **Linter**: ESLint with custom strict TypeScript rules.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Local Setup & Run
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/Knowasiak/pm101-iitbombay.git
+   cd pm101-iitbombay
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. Install the node packages:
+   ```bash
+   npm install
+   ```
+
+3. Spin up the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Build production static bundle:
+   ```bash
+   npm run build
+   ```
+
+---
+
+## ⚡ Deployment
+
+Every commit pushed to the `main` branch is built via **Vite** and deployed directly to production. The output static pages are optimized for instant loading, achieving perfect performance scores on lighthouse metrics.
